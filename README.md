@@ -48,24 +48,29 @@ $ sudo yum install -y ffmpeg rtmpdump
 ## Preparation
 
 When you use `timer.py`, you need to edit `programs.json`.
+
 `path` is path to store output mp4 files.
+
 `title` becomes the base mp4 file name. File name becomes `title`_${datetime}.mp4.
+
 `weekday` is the day of the week as an integer, where Monday is 1 and Sunday is 7.
+
 `showtime` is the start time.
+
 `length` is length of showtime, set by second.
 
 
 ```bash
 [
     {
-        "path": "/root/agqr",
+        "path": "/root/agqr-rec",
         "title": "suzakinishi",
         "weekday": "3",
         "showtime": "01:00",
         "length": "1800"
     },
     {
-        "path": "/root/agqr",
+        "path": "/root/agqr-rec",
         "title": "ojikan",
         "weekday": "3",
         "showtime": "23:00",
