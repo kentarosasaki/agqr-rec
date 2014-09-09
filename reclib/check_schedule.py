@@ -30,6 +30,7 @@ def _load_json(file_name):
   with open(file_name) as fp:
     return json.load(fp)
 
+
 def _check_weekday(weekday, now, check = False):
   """
   """
@@ -38,6 +39,7 @@ def _check_weekday(weekday, now, check = False):
   logging.debug("Check correct weekday flag: %s" % check)
   return check
 
+
 def _check_showtime(showtime, now, check = False):
   """
   """
@@ -45,6 +47,7 @@ def _check_showtime(showtime, now, check = False):
     check = True
   logging.debug("Check correct showtime flag: %s" % check)
   return check
+
 
 def check_target(programs_json, program = None):
   now = datetime.datetime.now()
