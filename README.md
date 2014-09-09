@@ -10,7 +10,7 @@ agqr-rec [![Apache License](http://img.shields.io/hexpm/l/plug.svg?style=flat)](
 To install, run `git clone`.
 
 ```bash
-$ git clone
+$ git clone https://github.com/kentarosasaki/agqr-rec.git
 ```
 
 ## Usage
