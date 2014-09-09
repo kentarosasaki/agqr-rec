@@ -1,0 +1,23 @@
+[
+    {
+        "path": "/Users/kentaro/git/agqr",
+        "title": "suzakinishi",
+        "weekday": "2",
+        "showtime": "22:28",
+        "length": "1800"
+    },
+    {
+        "path": "/Users/kentaro/git/agqr",
+        "title": "suzakinishi",
+        "weekday": "3",
+        "showtime": "22:00",
+        "length": "10"
+    },
+    {
+        "path": "/Users/kentaro/git/agqr",
+        "title": "ojikan",
+        "weekday": "3",
+        "showtime": "23:00",
+        "length": "1800"
+    }
+]
