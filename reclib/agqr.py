@@ -57,8 +57,8 @@ def option():
       help = "agqr streaming url"
       "(default: rtmp://fms-base1.mitene.ad.jp/agqr/aandg2)")
   parser.add_argument("-o", "--output", type = str,
-                      help = "recording mp4 file"
-                      "(default: (random uuid).mp4)")
+      help = "recording mp4 file"
+      "(default: (random uuid).mp4)")
   parser.add_argument("-l", "--length", type = int, default = 10,
                       help = "recording time[sec](default: 10[sec])")
   return parser.parse_args()
