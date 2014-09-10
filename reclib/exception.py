@@ -70,14 +70,14 @@ class CommandFailedError(Error):
     Error.__init__(self, ("Command Failed: %s") % msg)
 
 
-class OutputPathNotExist(Error):
-  def __init__(self, output_path):
-    """Raised on non-existent output path.
+class FileNotExist(Error):
+  def __init__(self, exist_file):
+    """Raised on non-existent file.
 
-    param output_path: Employed command binary
-    type output_path: string
+    param exist_file: Employed command binary
+    type exist_file: string
     """
-    Error.__init__(self, ("Output file path %s is not exist!") % output_path)
+    Error.__init__(self, ("File %s is not exist!") % exist_file)
 
 
 class TimerScheduleIncorrect(Error):
