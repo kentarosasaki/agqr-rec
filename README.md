@@ -5,6 +5,8 @@ agqr-rec [![Apache License](http://img.shields.io/hexpm/l/plug.svg?style=flat)](
 
 `agqr-rec` is the command line and cron job tools to record agqr(超!A&G+) shows.
 
+`agqr-rec` は、超!A&G+ の番組を録画するためのコマンドラインとcronジョブのツールです。
+
 ## Installation
 
 To install, run `git clone`.
@@ -32,7 +34,7 @@ $ crontab -e
 */15 * * * * python ${INSTALL_PATH}/timer.py
 ```
 
-## Requirement
+## Requirements
 
 `Python` version is required at least Python 2.7.
 
