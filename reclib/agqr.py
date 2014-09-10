@@ -33,16 +33,19 @@ import cmd_args
 import exception
 
 
-def executor(cmd):
+def executor(cmd, returncode = 0):
   """Exception handler for running execute function.
 
   Args:
     cmd: Command arguments
+    returncode: Return code of exec command (default: 0)
   """
   try:
-    ret = subprocess.check_output(cmd)
-  except Exception as msg:
-    exception.CommandFailedError(str(msg))
+    subprocess.check_output(cmd)
+    return returncode
+  except subprocess.CalledProcessError as exc:
+    returncode = int(exc.returncode)
+    return returncode
 
 
 def option():
@@ -51,11 +54,13 @@ def option():
                       help = "debug mode if this flag is set")
   parser.add_argument("-a", "--agqr-streaming-url", type = str,
       default = "rtmp://fms-base1.mitene.ad.jp/agqr/aandg2",
-      help = "agqr streaming url")
+      help = "agqr streaming url"
+      "(default: rtmp://fms-base1.mitene.ad.jp/agqr/aandg2)")
   parser.add_argument("-o", "--output", type = str,
-                      help = "recording mp4 file")
-  parser.add_argument("-l", "--length", type = int, default = 1800,
-                      help = "recording time[sec] (default: 1800[sec])")
+                      help = "recording mp4 file"
+                      "(default: (random uuid).mp4)")
+  parser.add_argument("-l", "--length", type = int, default = 10,
+                      help = "recording time[sec](default: 10[sec])")
   return parser.parse_args()
 
 
@@ -89,8 +94,19 @@ def run(radio_path = None, json_title = None, json_length = None):
 
   agqr_url = args.agqr_streaming_url
 
+  # Define rtmpdump command.
   rtmpdump_cmd = cmd_args.record(agqr_url, length, tmp_flv)
-  executor(rtmpdump_cmd)
+
+  # Define ffmpeg command.
   ffmpeg_cmd = cmd_args.encode_to_mp4(tmp_flv, output_mp4)
-  executor(ffmpeg_cmd)
-  os.remove(tmp_flv)
+
+  # Run rtmpdump command.
+  returncode = executor(rtmpdump_cmd)
+
+  if returncode is 0:
+    # Run ffmpeg command if rtmpdump is successful.
+    executor(ffmpeg_cmd)
+
+  if os.path.exists(tmp_flv):
+    # Remove existing temporary flv file if exists.
+    os.remove(tmp_flv)
