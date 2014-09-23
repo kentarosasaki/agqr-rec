@@ -21,7 +21,7 @@ You just run `record.py` directory or register `timer.py`.
 
 ```bash
 $ cd agqr
-$ python recording.py [-h] [-d] [-a AGQR_STREAMING_URL] [-o OUTPUT] [-l LENGTH]
+$ python agrec record [-h] [-o OUTPUT] [-l LENGTH]
 ```
 
 Agqr shows start every 15 minutes.
@@ -31,7 +31,7 @@ $ crontab -e
 ```
 
 ```bash
-*/15 * * * * python ${INSTALL_PATH}/timer.py
+*/15 * * * * python ${INSTALL_PATH}/agrec timer
 ```
 
 ## Requirements
@@ -49,7 +49,7 @@ $ sudo yum install -y ffmpeg rtmpdump
 
 ## Preparation
 
-When you use `timer.py`, you need to edit `programs.json`.
+When you use `agrec timer`, you need to edit `programs.json`.
 
 `path` is path to store output mp4 files.
 
