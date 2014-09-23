@@ -50,7 +50,6 @@ def parent_path(file_path):
 
 
 def recording_util(agqr_url, tmp_flv, output_mp4, length):
-
   # Define rtmpdump command.
   rtmpdump_cmd = cmd_args.record(agqr_url, length, tmp_flv)
 
