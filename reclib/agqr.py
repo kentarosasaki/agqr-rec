@@ -123,7 +123,6 @@ def timer(args):
   util.recording_util(agqr_url, tmp_flv, output_mp4, length)
 
 
-
 def run():
   args = option()
 
