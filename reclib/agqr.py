@@ -39,9 +39,9 @@ def option():
   parser.add_argument("-d", "--debug", action = "store_true", default = False,
                       help = "debug mode if this flag is set")
   parser.add_argument("-a", "--agqr-streaming-url", type = str,
-      default = "rtmp://fms-base1.mitene.ad.jp/agqr/aandg2",
+      default = "rtmp://fms-base1.mitene.ad.jp/agqr/aandg11",
       help = "agqr streaming url"
-      "(default: rtmp://fms-base1.mitene.ad.jp/agqr/aandg2)")
+      "(default: rtmp://fms-base1.mitene.ad.jp/agqr/aandg11)")
 
   subparsers = parser.add_subparsers()
 
